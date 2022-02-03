@@ -8,6 +8,7 @@ class BhtmusicApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("dsas");
     }
 
 }
