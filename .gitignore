@@ -12,6 +12,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+.mp3
 
 ### IntelliJ IDEA ###
 .idea
