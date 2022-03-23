@@ -25,14 +25,6 @@ public class SingerController {
     @Autowired
     private SingerServiceImpl singerService;
 
-/*    @Configuration
-    public class MyPicConfig implements WebMvcConfigurer {
-        @Override
-        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/img/singerPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\singerPic\\");
-        }
-    }*/
-
 //    添加歌手
     @ResponseBody
     @RequestMapping(value = "/singer/add", method = RequestMethod.POST)

@@ -5,18 +5,38 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @author passer-by
- * @date 2022/3/23
+ * @author wangdeyun
+ * @date  2022/3/23 18:17
+ * 此配置类用于进行文件的磁盘映射
  */
 @Configuration
 public class FileConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/avatorImages/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\avatorImages\\");
-        registry.addResourceHandler("/img/singerPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\singerPic\\");
-        registry.addResourceHandler("/img/songPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\songPic\\");
-        registry.addResourceHandler("/song/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\song\\");
-        registry.addResourceHandler("/img/songListPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\songListPic\\");
+        // 用户头像地址
+        registry.addResourceHandler("/avatorImages/**").addResourceLocations(
+                "file:"+System.getProperty("user.dir")+System.getProperty("file.separator")+"avatorImages"+System.getProperty("file.separator")
+        );
+        // 歌手头像地址
+        registry.addResourceHandler("/img/singerPic/**").addResourceLocations(
+                "file:"+System.getProperty("user.dir")+System.getProperty("file.separator")+"img"
+                        +System.getProperty("file.separator")+"singerPic"+System.getProperty("file.separator")
+        );
+        // 歌曲图片地址
+        registry.addResourceHandler("/img/songPic/**").addResourceLocations(
+                "file:"+System.getProperty("user.dir")+System.getProperty("file.separator")+"img"
+                        +System.getProperty("file.separator")+"songPic"+System.getProperty("file.separator")
+        );
+        // 歌曲地址
+        registry.addResourceHandler("/song/**").addResourceLocations(
+                "file:"+System.getProperty("user.dir")+System.getProperty("file.separator")+"song"
+                        +System.getProperty("file.separator")
+        );
+        // 歌单图片地址
+        registry.addResourceHandler("/img/songListPic/**").addResourceLocations(
+                "file:"+System.getProperty("user.dir")+System.getProperty("file.separator")+"img"
+                        +System.getProperty("file.separator")+"songListPic"+System.getProperty("file.separator")
+        );
     }
 
 }
