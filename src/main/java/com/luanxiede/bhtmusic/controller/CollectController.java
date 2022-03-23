@@ -39,7 +39,6 @@ public class CollectController {
         } else if (collectService.existSongId(Integer.parseInt(user_id), Integer.parseInt(song_id))) {
             jsonObject.put("code", 2);
             jsonObject.put("msg", "已收藏");
-            // TODO 如果歌曲已经收藏，再次点击应该要取消收藏！！！
             return jsonObject;
         }
         Collect collect = new Collect();

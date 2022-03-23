@@ -38,14 +38,6 @@ public class SongController {
         return factory.createMultipartConfig();
     }
 
-    @Configuration
-    public class MyPicConfig implements WebMvcConfigurer {
-        @Override
-        public void addResourceHandlers(ResourceHandlerRegistry registry) {
-            registry.addResourceHandler("/img/songPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\songPic\\");
-            registry.addResourceHandler("/song/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\song\\");
-        }
-    }
 
 //    添加歌曲
     @ResponseBody

@@ -25,14 +25,13 @@ public class SingerController {
     @Autowired
     private SingerServiceImpl singerService;
 
-    @Configuration
+/*    @Configuration
     public class MyPicConfig implements WebMvcConfigurer {
         @Override
-        // TODO  对于所有的磁盘映射，应该把他们调整到一个类，同时把写死的目录进行处理
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
             registry.addResourceHandler("/img/singerPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\singerPic\\");
         }
-    }
+    }*/
 
 //    添加歌手
     @ResponseBody

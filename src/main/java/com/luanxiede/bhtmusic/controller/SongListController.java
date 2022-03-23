@@ -23,13 +23,13 @@ public class SongListController {
     @Autowired
     private SongListServiceImpl songListService;
 
-    @Configuration
+/*    @Configuration
     public class MyPicConfig implements WebMvcConfigurer {
         @Override
         public void addResourceHandlers(ResourceHandlerRegistry registry) {
             registry.addResourceHandler("/img/songListPic/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\img\\songListPic\\");
         }
-    }
+    }*/
 
 //    添加歌单
     @ResponseBody

@@ -9,6 +9,9 @@ public interface RankMapper {
 
     int insert(Rank record);
 
+    // 查询该用户是否已经评分过，若已经评分过，则覆盖评分
+    int isExistScore(Rank record);
+
     int insertSelective(Rank record);
 
     /**
@@ -24,4 +27,7 @@ public interface RankMapper {
      * @return
      */
     int selectRankNum(Long songListId);
+
+    //更新评分
+    int updateScore(Rank record);
 }

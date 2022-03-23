@@ -26,6 +26,7 @@ public class ConsumerController {
     @Autowired
     private ConsumerServiceImpl consumerService;
 
+/*
     @Configuration
     public class MyPicConfig implements WebMvcConfigurer {
         @Override
@@ -33,6 +34,7 @@ public class ConsumerController {
             registry.addResourceHandler("/avatorImages/**").addResourceLocations("file:C:\\Users\\passerby\\Desktop\\music-website-master\\music-server\\avatorImages\\");
         }
     }
+*/
 
 //    添加用户
     @ResponseBody
