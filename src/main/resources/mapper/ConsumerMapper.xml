@@ -42,11 +42,26 @@
       and
     password = #{password, jdbcType=VARCHAR} ;
   </select>
-  <select id="existUsername" resultType="java.lang.Integer" parameterType="java.lang.String">
+  <!--校验用户名 -->
+  <select id="existUsername" resultType="java.lang.Integer" parameterType="com.luanxiede.bhtmusic.domain.Consumer">
     select count(*)
     from consumer
     where username = #{username, jdbcType=VARCHAR}
    </select>
+  <!--校验手机号 -->
+  <select id="existPhoneNum" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select count(*)
+    from consumer
+    where phone_num = #{phone_num, jdbcType=VARCHAR}
+  </select>
+  <!--校验邮箱 -->
+  <select id="existEmail" resultType="java.lang.Integer" parameterType="com.luanxiede.bhtmusic.domain.Consumer">
+    select count(*)
+    from consumer
+    where email = #{email, jdbcType=VARCHAR}
+  </select>
+
+
   <select id="loginStatus" resultMap="BaseResultMap">
     select *
     from consumer
@@ -207,6 +222,12 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!-- 根具邮箱查找用户名-->
+  <select id="findUsername" resultType="java.lang.String" parameterType="java.lang.String">
+  select username from consumer
+where email = #{email,jdbcType=CHAR}
+  </select>
+
   <update id="updateByPrimaryKey" parameterType="com.luanxiede.bhtmusic.domain.Consumer" >
     <!--
       WARNING - @mbggenerated

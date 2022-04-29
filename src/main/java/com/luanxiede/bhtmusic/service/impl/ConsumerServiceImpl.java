@@ -32,8 +32,8 @@ public class ConsumerServiceImpl implements ConsumerService {
     }
 
     @Override
-    public boolean existUser(String username) {
-        return consumerMapper.existUsername(username)>0 ? true:false;
+    public boolean existUser(Consumer consumer) {
+        return consumerMapper.existUsername(consumer)>0 ? true:false;
     }
 
     @Override
@@ -46,6 +46,26 @@ public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public boolean deleteUser(Integer id) {
         return consumerMapper.deleteUser(id) >0 ?true:false;
+    }
+
+/*    核验邮箱手机号用户名是否重复
+* 1为用户名重复 ，2 为手机号重复 3 为邮箱重复 4为正常可以注册
+* */
+    @Override
+    public int checkRepeatItem(Consumer consumer) {
+        String phone_num = consumer.getPhoneNum();
+        if (consumerMapper.existUsername(consumer)>0)
+            return 1;
+        else if (consumerMapper.existPhoneNum(phone_num)>0)
+            return 2;
+        else if (consumerMapper.existEmail(consumer)>0)
+            return 3;
+        else return 4;
+    }
+
+    @Override
+    public String findUsername(String email) {
+        return consumerMapper.findUsername(email);
     }
 
     @Override

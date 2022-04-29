@@ -14,11 +14,15 @@ public interface ConsumerService {
 
     boolean updateUserAvator(Consumer consumer);
 
-    boolean existUser(String username);
+    boolean existUser(Consumer consumer);
 
     boolean veritypasswd(String username, String password);
 
     boolean deleteUser(Integer id);
+
+    int checkRepeatItem(Consumer consumer);
+
+    String  findUsername(String email);
 
     List<Consumer> allUser();
 

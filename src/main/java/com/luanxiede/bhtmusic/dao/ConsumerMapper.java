@@ -17,11 +17,17 @@ public interface ConsumerMapper {
 
     int verifyPassword(String username, String password);
 
-    int existUsername(String username);
+    int existUsername(Consumer record);
+
+    int existPhoneNum(String phone_num);
+
+    int existEmail(Consumer record);
 
     int updateUserMsg(Consumer record);
 
     int updateUserAvator(Consumer record);
+
+    String  findUsername(String email);
 
     int deleteUser(Integer id);
 
