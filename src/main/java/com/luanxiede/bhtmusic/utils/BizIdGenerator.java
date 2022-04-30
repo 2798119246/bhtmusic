@@ -7,6 +7,7 @@ package com.luanxiede.bhtmusic.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
@@ -24,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <p>
  * 数据中心id和平台id这里就是凑位数的没有什么实际意义，其实也是留作扩展位
  */
-
+@Slf4j
 public class BizIdGenerator {
     // 计数器所占的位数
     private static final int COUNT_BITS = 8;
@@ -61,7 +62,7 @@ public class BizIdGenerator {
         this.dataCenterId = String.format(DATACENTER_ID_FORMAT, dataCenterId);
         this.workerId = String.format(WORKED_ID_FORMAT, workerId);
         this.platformId = this.dataCenterId + this.workerId;
-        //log.info("初始化平台id", platformId);
+        log.info("初始化平台id", platformId);
     }
 
     /**
@@ -81,7 +82,7 @@ public class BizIdGenerator {
             );
         }
         String bizId = bizCount.getNextId();
-        //log.debug("id生成器生成id：", bizId);
+        log.debug("id生成器生成id：", bizId);
         return bizId;
     }
 

@@ -13,6 +13,7 @@ target/
 .springBeans
 .sts4-cache
 .mp3
+.jpg
 
 ### IntelliJ IDEA ###
 .idea
