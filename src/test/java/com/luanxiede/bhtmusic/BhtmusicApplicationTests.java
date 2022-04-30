@@ -1,5 +1,6 @@
 package com.luanxiede.bhtmusic;
 
+import com.luanxiede.bhtmusic.utils.BizIdHelper;
 import com.luanxiede.bhtmusic.utils.EmailHelper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ class BhtmusicApplicationTests {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    BizIdHelper bizIdHelper;
 
     private static String REGEX = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$";
 
@@ -54,9 +58,7 @@ class BhtmusicApplicationTests {
     }
     @Test
     void dd(){
-
-        String code = String.valueOf((int)((Math.random()*9+1)*100000));
-        System.out.println(code);
+        System.out.println(bizIdHelper.id());
     }
 
 }

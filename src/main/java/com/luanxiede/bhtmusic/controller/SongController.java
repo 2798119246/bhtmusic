@@ -12,8 +12,6 @@ import org.springframework.util.unit.DataSize;
 import org.springframework.util.unit.DataUnit;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.http.HttpServletRequest;
@@ -32,9 +30,9 @@ public class SongController {
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
         //文件最大10M,DataUnit提供5中类型B,KB,MB,GB,TB
-        factory.setMaxFileSize(DataSize.of(10, DataUnit.MEGABYTES));
+        factory.setMaxFileSize(DataSize.of(20, DataUnit.MEGABYTES));
         /// 设置总上传数据总大小10M
-        factory.setMaxRequestSize(DataSize.of(10, DataUnit.MEGABYTES));
+        factory.setMaxRequestSize(DataSize.of(20, DataUnit.MEGABYTES));
         return factory.createMultipartConfig();
     }
 
