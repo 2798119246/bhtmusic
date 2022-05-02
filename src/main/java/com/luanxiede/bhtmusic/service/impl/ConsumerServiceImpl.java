@@ -17,6 +17,10 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     @Override
     public boolean addUser(Consumer consumer) {
+        if (consumer.getAvator() == null)
+        {
+            consumer.setAvator("/img/user.jpg");
+        }
         return consumerMapper.insertSelective(consumer) >0 ?true:false;
     }
 

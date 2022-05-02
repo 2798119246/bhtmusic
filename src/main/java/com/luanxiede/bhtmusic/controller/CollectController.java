@@ -72,7 +72,7 @@ public class CollectController {
     @RequestMapping(value = "/collection/detail", method = RequestMethod.GET)
     public Object collectionOfUser(HttpServletRequest req){
         String userId = req.getParameter("userId");
-        List tmp =collectService.collectionOfUser(Integer.parseInt(userId));
+       // List tmp =collectService.collectionOfUser(Integer.parseInt(userId));
         return collectService.collectionOfUser(Integer.parseInt(userId));
     }
 

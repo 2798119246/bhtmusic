@@ -2,6 +2,7 @@ package com.luanxiede.bhtmusic.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.luanxiede.bhtmusic.service.impl.AdminServiceImpl;
+import com.luanxiede.bhtmusic.service.impl.SongServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,9 @@ import javax.servlet.http.HttpSession;
 public class AdminController {
     @Autowired
     private AdminServiceImpl adminService;
+
+    @Autowired
+    private SongServiceImpl songService;
 
 //    判断是否登录成功
     @ResponseBody
@@ -41,4 +45,5 @@ public class AdminController {
         }
 
     }
+
 }

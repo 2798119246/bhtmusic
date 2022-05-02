@@ -69,6 +69,9 @@ public class SongController {
             Song song = new Song();
             song.setSingerId(Integer.parseInt(singer_id));
             song.setName(name);
+            if (introduction == null){
+                introduction = "未知";
+            }
             song.setIntroduction(introduction);
             song.setCreateTime(new Date());
             song.setUpdateTime(new Date());
